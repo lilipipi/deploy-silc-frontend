@@ -4,7 +4,10 @@ import { GET_ERRORS, SET_CURRENT_USER, GET_USERS, GET_USER } from "./types";
 
 export const createNewUser = (newUser, history) => async (dispatch) => {
   try {
-    await axios.post("http://localhost:8000/api/register", newUser);
+    await axios.post(
+      "https://immense-refuge-04404.herokuapp.com/api/register",
+      newUser
+    );
     history.push("/SignIn");
     dispatch({
       type: GET_ERRORS,
@@ -22,7 +25,7 @@ export const login = (LoginRequest) => async (dispatch) => {
   try {
     //post => login request
     const res = await axios.post(
-      "http://localhost:8000/api/login",
+      "https://immense-refuge-04404.herokuapp.com/api/login",
       LoginRequest
     );
     //extract token from data
@@ -59,7 +62,7 @@ export const adminLogin = (LoginRequest) => async (dispatch) => {
   try {
     //post => login request
     const res = await axios.post(
-      "http://localhost:8000/api/adminLogin",
+      "https://immense-refuge-04404.herokuapp.com/api/adminLogin",
       LoginRequest
     );
     //extract token from data
@@ -110,8 +113,10 @@ export const adminLogout = () => (dispatch) => {
   });
 };
 
- export const getUsers = () => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/users`);
+export const getUsers = () => async (dispatch) => {
+  const res = await axios.get(
+    `https://immense-refuge-04404.herokuapp.com/api/users`
+  );
   dispatch({
     type: GET_USERS,
     payload: res.data,
@@ -119,7 +124,9 @@ export const adminLogout = () => (dispatch) => {
 };
 
 export const getUser = (id) => async (dispatch) => {
-  const res = await axios.get(`http://localhost:8000/api/user/${id}`);
+  const res = await axios.get(
+    `https://immense-refuge-04404.herokuapp.com/api/user/${id}`
+  );
   dispatch({
     type: GET_USER,
     payload: res.data,
@@ -127,16 +134,19 @@ export const getUser = (id) => async (dispatch) => {
 };
 
 export const updateUser = (id, updateUser) => async (dispatch) => {
-try {
-  await axios.put(`http://localhost:8000/api/user/${id}`, updateUser);
-  dispatch({
-    type: GET_ERRORS,
-    payload: {},
-  });
-} catch (error) {
-  dispatch({
-    type: GET_ERRORS,
-    payload: error.response.data,
-  });
-}
+  try {
+    await axios.put(
+      `https://immense-refuge-04404.herokuapp.com/api/user/${id}`,
+      updateUser
+    );
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: error.response.data,
+    });
+  }
 };

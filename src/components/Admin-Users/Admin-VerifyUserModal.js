@@ -13,7 +13,7 @@ function MyVerticallyCenteredModal(props) {
 
   useEffect(async () => {
     await axios
-      .get(`http://localhost:8000/api/user/${userId}`)
+      .get(`https://immense-refuge-04404.herokuapp.com/api/user/${userId}`)
       .then((response) => {
         setAddress(response.data.data.address);
         setContact(response.data.data.contact_no);
@@ -36,7 +36,10 @@ function MyVerticallyCenteredModal(props) {
       AM: am,
     };
     await axios
-      .put(`http://localhost:8000/api/user/${userId}`, userForm)
+      .put(
+        `https://immense-refuge-04404.herokuapp.com/api/user/${userId}`,
+        userForm
+      )
       .then((response) => {
         console.log(response);
         console.log("this is user type: " + investorType);

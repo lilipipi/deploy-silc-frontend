@@ -3,34 +3,46 @@ import { Modal, Button } from "react-bootstrap";
 
 function MyVerticallyCenteredModal(props) {
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-    >
+    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Entity Application Forms
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        Apply to become an Individual Investor. &ensp; 
-        <a href="http://localhost:3000/" className="feedBackButton" variant="primary">
-         Click here.
-        </a>
-        <br />
-        Apply to update entity as an Australian Company Investor. &ensp; 
-        <a href="http://localhost:3000/" className="feedBackButton" variant="primary">
+        Apply to become an Individual Investor. &ensp;
+        <a
+          href="https://immense-refuge-04404.herokuapp.com"
+          className="feedBackButton"
+          variant="primary"
+        >
           Click here.
         </a>
         <br />
-        Apply to update entity as a Company Trustee Investor. &ensp; 
-        <a href="http://localhost:3000/" className="feedBackButton" variant="primary">
+        Apply to update entity as an Australian Company Investor. &ensp;
+        <a
+          href="https://immense-refuge-04404.herokuapp.com"
+          className="feedBackButton"
+          variant="primary"
+        >
           Click here.
         </a>
         <br />
-        Apply to update entity as an Individual Trustee Investor. &ensp; 
-        <a href="http://localhost:3000/" className="feedBackButton" variant="primary">
+        Apply to update entity as a Company Trustee Investor. &ensp;
+        <a
+          href="https://immense-refuge-04404.herokuapp.com"
+          className="feedBackButton"
+          variant="primary"
+        >
+          Click here.
+        </a>
+        <br />
+        Apply to update entity as an Individual Trustee Investor. &ensp;
+        <a
+          href="https://immense-refuge-04404.herokuapp.com"
+          className="feedBackButton"
+          variant="primary"
+        >
           Click here.
         </a>
       </Modal.Body>
