@@ -1,0 +1,805 @@
+//imports
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+
+//color palette
+$mainTheme: #ac162c;
+$text1: black;
+$text2: #979797;
+$text3: white;
+$backgroundPrimary: white;
+$backgroundSecondary: #f2f2f2;
+$dividerColor: #ebebeb;
+$onHover: maroon;
+
+//fonts
+$bodyText: "Source Sans Pro", sans-serif;
+$headerText: "Montserrat", sans-serif;
+$headingFontSize: 24px;
+$bodyFontSize: 16px;
+$medFontSize: 14px;
+$smallFontSize: 12px;
+
+body {
+  background-color: $backgroundSecondary;
+}
+h5 {
+  color: $mainTheme;
+  font-size: $headerText;
+}
+#cardNav{
+  text-decoration: none;
+}
+.logo {
+  width: 90%;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.primary-header {
+  display: inline-block;
+  color: $mainTheme;
+  font-size: $headingFontSize;
+  font-weight: bold;
+  padding: 1px 16px;
+}
+.secondary-header {
+  display: inline-block;
+  color: $mainTheme;
+  font-size: $bodyFontSize;
+  font-weight: bold;
+}
+.allLinks {
+  font-size: $bodyFontSize;
+  color: $text2;
+}
+.allLinks:hover {
+  color: $mainTheme;
+}
+a:-webkit-any-link {
+  color: $mainTheme;
+  cursor: pointer;
+}
+#submitBtn-standard {
+  background-color: $mainTheme;
+  border: none;
+}
+#submitBtn-standard:hover {
+  background-color: $onHover;
+}
+/**-----------------Login/Signup--------------------**/
+.loginRow {
+  height: 100vh;
+  width: 100%;
+}
+.loginCol:first-child {
+  padding: 10%;
+  padding-left: 100px;
+}
+.loginCol:not(:first-child) {
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#logoCol {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 80%;
+  display: block;
+}
+#loginCard {
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 5px 5px 3px 1px rgba(128, 126, 126, 0.2);
+  animation-name: loginCard-animation;
+  animation-duration: 1s;
+}
+@keyframes loginCard-animation {
+  from {
+    opacity: 0;
+    margin-left: 20px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#loginBtn {
+  border: none;
+  background-color: $mainTheme;
+  width: 100%;
+}
+#loginCard a {
+  display: inline-block;
+  float: right;
+  color: $mainTheme;
+}
+#loginformCheckbox {
+  display: inline-block;
+}
+a#signupLink {
+  float: none;
+  margin-left: 8px;
+}
+
+#mutedTextLabel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.pwShow {
+  display: inline-block;
+  cursor: pointer;
+  color: $mainTheme;
+}
+/* #resetPwSuccess {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 20px;
+  text-align: center;
+  color: red;
+  width: fit-content;
+  padding: 8px;
+  white-space: nowrap;
+} */
+#authFailed {
+  color: red;
+}
+/**-----------------End of Login/Signup--------------------**/
+
+/**-----------------Sidebar--------------------**/
+div.content {
+  margin-left: 300px;
+  padding: 1px 16px;
+}
+
+.sidebar {
+  margin: 0px;
+  padding: 0px;
+  width: 300px;
+  background-color: $backgroundPrimary;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  text-align: left;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.sidebar a {
+  display: block;
+  color: $text1;
+  padding: 25px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.4s;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: $backgroundSecondary;
+  color: $text1;
+  border-right: 2px solid $mainTheme;
+  white-space: nowrap;
+}
+
+.sidebar a.active {
+  background-color: $backgroundSecondary;
+  color: $text1;
+  border-right: 2px solid $mainTheme;
+  white-space: nowrap;
+}
+
+.logoutButton {
+  position: absolute;
+  bottom: 0;
+  background-color: $backgroundPrimary;
+  border: none;
+  padding: 20px;
+  color: $mainTheme;
+}
+
+#icons {
+  margin-right: 12px;
+}
+/**-----------------End of Sidebar--------------------**/
+/*------------------Navbar-----------------------------*/
+.header-navbar {
+  margin-left: 300px;
+  padding-right: 50px;
+  background-color: $backgroundSecondary !important;
+}
+.dropdown {
+  left: 94%;
+  padding: 5px;
+  top: 10px;
+}
+
+#basic-nav-dropdown {
+  border-radius: 50px;
+  background-image: url("../includes/sampleUserIcon.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 50px;
+  height: 50px;
+}
+#basic-nav-dropdown::after {
+  display: none;
+}
+.dropdown-menu {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+  font-size: 14px;
+  padding: 0px;
+  min-width: 0px;
+}
+
+#hr {
+  background-color: $dividerColor;
+}
+
+/*----------------End of Navbar------------------------*/
+/*------------------Marketplace-----------------------------*/
+
+.add-asset-button {
+  margin-bottom: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: $bodyFontSize;
+  padding: 8px;
+  display: inline-block;
+  float: right;
+  color: $mainTheme;
+}
+
+.add-asset-button:hover {
+  background-color: transparent;
+  color: $mainTheme;
+  text-decoration: underline;
+}
+
+.assetCardContainer {
+  display: flex;
+  width: 100%;
+  margin-top: 0;
+  transition: all 0.4s;
+  animation-name: loadUpFade;
+  animation-duration: 1s;
+}
+@keyframes loadUpFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pagination {
+  align-items: center;
+  justify-content: center;
+}
+.pagination a {
+  color: $text2;
+}
+.pagination a:hover {
+  color: $mainTheme;
+}
+.page-item.active .page-link {
+  background-color: $mainTheme;
+  border: none;
+}
+
+.sortBtn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #cac9cf;
+  border-radius: 10px;
+  color: $text1;
+  font-weight: 500;
+  padding: 6px;
+  font-size: $medFontSize;
+}
+
+.sortDropdown {
+  position: relative;
+  padding: 0;
+  float: right;
+}
+
+.sortDropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 2px;
+  border-radius: 10px;
+}
+
+.sortDropdown-content a {
+  color: $text1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: $smallFontSize;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+#dropIcon {
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.sortDropdown-content a:hover {
+  background-color: #cac9cf;
+  color: $mainTheme;
+}
+.sortDropdown:hover .sortDropdown-content {
+  display: block;
+}
+.sortDropdown:hover .sortBtn {
+  box-shadow: rgb(166, 25, 46) 0 0 3px;
+}
+
+/*------------------End of marketplace-----------------------------*/
+
+/**-----------------Filterbar--------------------**/
+.flexCol {
+  position: relative;
+  background-color: $backgroundPrimary;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 20%;
+  width: fit-content;
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+  padding: 1rem !important;
+  border-radius: 0.25rem;
+}
+.flexCol2 {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  /* width: 80%; */
+  width: auto;
+}
+#formLabel {
+  font-weight: bold;
+}
+.flexCol form:nth-child(n + 2) {
+  margin-top: 50px;
+}
+.input-range__slider {
+  background-color: $mainTheme;
+  border: none;
+}
+.input-range__track--active {
+  background: $mainTheme;
+}
+
+.input-range__label-container,
+.input-range__label--max .input-range__label-container {
+  left: 0;
+  color: $text1;
+}
+
+/**-----------------End of Filterbar--------------------**/
+
+/**-----------------Add asset form--------------------**/
+#submitBtn {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: $mainTheme;
+  border: none;
+  margin-right: 10px;
+}
+#submitBtn:hover {
+  background-color: $onHover;
+}
+.imageInputContainer {
+  width: 100%;
+  padding: 5%;
+  background-color: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="file"]::-webkit-file-upload-button {
+  border: none;
+  background-color: transparent;
+  color: $mainTheme;
+  text-decoration: underline;
+}
+input[type="file"]::-webkit-file-upload-button:hover {
+  cursor: pointer;
+}
+#formFocus:focus:valid {
+  /* box-shadow: 0 0 5px rgba(0, 128, 0, 1); */
+  box-shadow: none;
+  border: 1px solid rgba(0, 128, 0, 1);
+}
+#formFocus:focus:invalid {
+  /* box-shadow: 0 0 5px rgba(166, 25, 46, 1); */
+  box-shadow: none;
+  border: 1px solid rgba(166, 25, 46, 1);
+}
+input:matches([type="text"], [type="number"])::-webkit-input-placeholder {
+  font-size: 14px;
+}
+/**-----------------End of Add asset form--------------------**/
+
+/**-----------------Asset Overview--------------------**/
+
+.nav-tabs .nav-link {
+  color: $text1;
+  border: none;
+}
+.nav-tabs .nav-link:hover {
+  color: $mainTheme;
+}
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px $mainTheme;
+}
+.carousel.slide {
+  width: 80%;
+}
+#carouselImg {
+  width: 100%;
+}
+#assetView {
+  margin-top: 20px;
+  animation-name: loadUpFade-overview;
+  animation-duration: 2s;
+}
+@keyframes loadUpFade-overview {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#asset_detailsContainer {
+  display: flex;
+  vertical-align: top;
+}
+#asset_detailsContainer strong {
+  margin-right: 5px;
+}
+#seperatorHr {
+  width: 100px;
+  color: $mainTheme;
+  background-color: $mainTheme;
+}
+.progress-bar {
+  background-color: $mainTheme;
+  opacity: 0.75;
+}
+/**-----------------End of Asset Overview--------------------**/
+
+/**-----------------Market place dashboard--------------------**/
+.card-body{
+ padding: 0.25rem;
+ margin-left: 0.5rem;
+}
+#assetCards {
+  background: transparent;
+  transition: all 0.6s;
+  background-color: white;
+}
+#assetCards:hover {
+  transform: scale(1.05);
+}
+#assetTitle {
+  color: $text1;
+}
+#assetTitle:hover {
+  color: $mainTheme;
+  text-decoration: underline;
+}
+#assetImg {
+  background-color: white;
+  transition: all 0.6s;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+ #assetImg:hover {
+  opacity: 0.8;
+}
+
+#assetLogo{
+  width: 20%;
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+}
+
+.assetBadge{
+  background-color: $mainTheme;
+}
+.assetBadge-Property{
+  background-color: black;
+}
+
+.assetBadge-PrivateEq{
+  background-color: #FFA07A;
+}
+/**-----------------End of Market place dashboard--------------------**/
+
+/**-----------------History Timeline--------------------**/
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: $backgroundPrimary;
+  top: 25px;
+  bottom: 35px;
+  left: 0;
+  margin-left: 8px;
+}
+.timelineContainer {
+  padding: 10px 40px;
+  position: relative;
+  width: 100%;
+  font-size: $bodyFontSize;
+}
+.timelineContainer::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0px;
+  background-color: $backgroundPrimary;
+  border: 2px solid $mainTheme;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.right {
+  left: 0;
+}
+.right::after {
+  left: 0px;
+}
+.timelineContent {
+  padding: 5px;
+  position: relative;
+  border-radius: 4px;
+}
+/**-----------------End of History Timeline--------------------**/
+
+/**-----------------User Profile--------------------**/
+.userCardContainer {
+  display: flex;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 20px;
+  animation-name: loadUpFade-user;
+  animation-duration: 1s;
+}
+@keyframes loadUpFade-user {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.userCardCol {
+  display: block;
+  text-align: justify;
+}
+.userCardCol:nth-child(2) {
+  border-radius: 8px;
+  box-shadow: 3px 1px 5px 5px rgba(128, 126, 126, 0.2);
+  padding: 0;
+}
+/* #userSettingCol{
+  margin: none;
+} */
+.userCardStyle {
+  background-color: transparent;
+  border: none;
+}
+.userCardStyle:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#userImageContainer {
+  background-color: rgba(172, 22, 44, 0.8);
+  border-radius: 8px 8px 0 0;
+}
+#userDetailsContainer {
+  background-color: $backgroundPrimary;
+  border-radius: 0 0 8px 8px;
+  margin: 0px;
+  padding: 1.25rem;
+}
+#userImageContainer h3 {
+  color: $text3;
+}
+.userImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 20px;
+}
+.userDetails {
+  display: inline-block;
+}
+.userDetails small {
+  float: left;
+  margin-right: 0.5rem;
+}
+.userDetails h6 {
+  float: left;
+}
+.verifiedUserBadge{
+  background-color: rgba(0, 128, 0, 1);
+}
+.verifiedUserBadge-Profile{
+  color: rgba(0, 128, 0, 1);
+  background-color: $backgroundSecondary;
+  border-radius: 100%;
+  padding: 1px;
+  margin-left: 4px;
+}
+#infoIcon {
+  margin-right: 4px;
+  color: $mainTheme;
+  font-size: medium;
+  cursor: pointer;
+}
+#accordianBtn {
+  display: inline-block;
+  width: 100%;
+  text-align: start;
+  color: $mainTheme;
+}
+#caretIcon {
+  display: inline-block;
+  float: right;
+  color: $mainTheme;
+}
+.accordionMain {
+  border: 1px solid $dividerColor;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.feedBackButton {
+  background-color: transparent;
+  border: none;
+  color: $mainTheme;
+}
+.feedBackButton:hover {
+  text-decoration: underline;
+}
+#feedBackBtn {
+  background-color: $mainTheme;
+  border: none;
+}
+#feedBackBtn:hover {
+  background-color: $onHover;
+}
+
+/**-----------------End of User Profile--------------------**/
+/**-----------------Admin-User-Overview--------------------**/
+#admin-userImage{
+  border-radius: 6px;
+  width: 100%;
+}
+.admin-userTitleTag {
+  display: block;
+  margin-bottom: 15px;
+}
+.admin-userStats {
+  text-align: center;
+}
+.admin-userStats:not(:last-child){
+  margin-right: 10rem;
+}
+#admin-userStatsCard {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+.admin-verifyUserModalCheck {
+  display: inline;
+  border: none;
+}
+/**-----------------End of Admin-User-Overview--------------------**/
+
+/**-----------------Responsive Components--------------------**/
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+
+  .header-navbar {
+    margin-left: 0px;
+  }
+
+  .search-form {
+    display: contents !important;
+  }
+
+  .marketplace-header {
+    font-size: 20px;
+  }
+
+  .add-asset-button {
+    font-size: 15px;
+    size: 10px;
+  }
+  .logo {
+    width: 50%;
+   
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .header-navbar {
+    margin-left: 0px;
+  }
+
+  .search-form {
+    display: contents !important;
+  }
+
+  .marketplace-header {
+    display: flex;
+  }
+
+  .marketplace-header {
+    font-size: 20px;
+  }
+
+  .add-asset-button {
+    font-size: 15px;
+    size: 10px;
+  }
+}
+/**-----------------End Of Responsive Components--------------------**/
+
